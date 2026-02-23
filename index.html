@@ -291,29 +291,23 @@
 </section>
 
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 <script>
-  // ---> HERE IS YOUR PDF PATH <---
   const url = 'static/images/FM_T-GOT-Edit_teaser.pdf';
 
-  // Setup PDF.js worker
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
-  // Load the PDF
   pdfjsLib.getDocument(url).promise.then(function(pdf) {
-    // Fetch the first page
     pdf.getPage(1).then(function(page) {
-      const scale = 2.0; // Higher scale means better resolution
+      // Changed from 2.0 to 3.0 to keep the image perfectly sharp at the new, larger size
+      const scale = 3.0; 
       const viewport = page.getViewport({scale: scale});
 
-      // Prepare canvas using PDF page dimensions
       const canvas = document.getElementById('the-canvas');
       const context = canvas.getContext('2d');
       canvas.height = viewport.height;
       canvas.width = viewport.width;
 
-      // Render PDF page into canvas context
       const renderContext = {
         canvasContext: context,
         viewport: viewport
@@ -324,11 +318,11 @@
 </script>
 
 <div class="item">
-  <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
     
     <canvas id="the-canvas" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.05);"></canvas>
     
-    <p class="subtitle" style="margin-top: 15px; font-size: 0.95rem; text-align: justify; line-height: 1.5; color: #4a4a4a;">
+    <p class="subtitle" style="margin-top: 15px; font-size: 1.05rem; text-align: justify; line-height: 1.5; color: #4a4a4a;">
       <strong>GOT-Edit</strong> facilitates the understanding of 3D geometry to aid generic object tracking from 2D streaming inputs. It predicts semantic and geometric model weights concurrently to incrementally adapt the tracking model. Through online model editing, it ensures geometry-aware, semantic-preserving updates to the tracking model.
     </p>
 
@@ -469,7 +463,8 @@ Extensive experiments on multiple GOT benchmarks demonstrate that GOT-Edit achie
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
