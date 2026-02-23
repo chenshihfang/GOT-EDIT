@@ -323,6 +323,74 @@
   </h2>
 </div>
 
+
+<div class="item">
+  <embed 
+    src="static/images/FM_T-GOT-Edit_teaser.pdf#toolbar=0&amp;navpanes=0&amp;scrollbar=0&amp;view=FitH" 
+    type="application/pdf" 
+    width="100%" 
+    height="450px" 
+    style="overflow: hidden; pointer-events: none;"> 
+    
+  <h2 class="subtitle has-text-centered">
+        GOT-Edit facilitates the understanding of 3D geometry to
+    aid generic object tracking from 2D streaming inputs. It predicts semantic and geometric model
+    weights concurrently to incrementally adapt the tracking model. Through online model editing,
+    it ensures geometry-aware, semantic-preserving updates to the tracking model.
+  </h2>
+</div>
+
+
+<div class="item">
+  <canvas id="the-canvas" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"></canvas>
+  <h2 class="subtitle has-text-centered">
+        GOT-Edit facilitates the understanding of 3D geometry to
+    aid generic object tracking from 2D streaming inputs. It predicts semantic and geometric model
+    weights concurrently to incrementally adapt the tracking model. Through online model editing,
+    it ensures geometry-aware, semantic-preserving updates to the tracking model.
+  </h2>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+<script>
+  // URL to your PDF
+  const url = 'static/images/FM_T-GOT-Edit_teaser.pdf';
+
+  // Setup PDF.js worker
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
+  // Load the PDF
+  pdfjsLib.getDocument(url).promise.then(function(pdf) {
+    // Fetch the first page
+    pdf.getPage(1).then(function(page) {
+      const scale = 2.0; // Higher scale means better resolution
+      const viewport = page.getViewport({scale: scale});
+
+      // Prepare canvas using PDF page dimensions
+      const canvas = document.getElementById('the-canvas');
+      const context = canvas.getContext('2d');
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+
+      // Render PDF page into canvas context
+      const renderContext = {
+        canvasContext: context,
+        viewport: viewport
+      };
+      page.render(renderContext);
+    });
+  });
+</script>
+
+<div class="item">
+  <canvas id="the-canvas" style="width: 100%; height: auto; border-radius: 8px;"></canvas>
+  
+  <h2 class="subtitle has-text-centered" style="margin-top: 15px; font-size: 1rem;">
+    <strong>GOT-Edit</strong> facilitates the understanding of 3D geometry to aid generic object tracking from 2D streaming inputs. It predicts semantic and geometric model weights concurrently to incrementally adapt the tracking model. Through online model editing, it ensures geometry-aware, semantic-preserving updates to the tracking model.
+  </h2>
+</div>
+
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
