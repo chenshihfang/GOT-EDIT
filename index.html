@@ -188,45 +188,37 @@
 
   <!-- More Works Dropdown -->
   <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from My Research">
       <i class="fas fa-flask"></i>
       More Works
       <i class="fas fa-chevron-down dropdown-arrow"></i>
     </button>
     <div class="more-works-dropdown" id="moreWorksDropdown">
       <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
+        <h4>More Research</h4>
         <button class="close-btn" onclick="toggleMoreWorks()">
           <i class="fas fa-times"></i>
         </button>
       </div>
       <div class="works-list">
         <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
+        <a href="https://scholar.google.com/scholar?hl=zh-TW&as_sdt=0%2C5&q=Improving+Visual+Object+Tracking+Through+Visual+Prompting&btnG=" class="work-item" target="_blank">
           <div class="work-info">
             <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
+            <h5>Improving visual object tracking through visual prompting</h5>
             <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
+            <p>Automatic generation and refinement of visual prompts for foundation models to robust tracking</p>
             <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
+            <span class="work-venue">Publish @ IEEE TMM 2025</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
         </a>
         <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
+        <a href="https://www.arxiv.org/abs/2602.14771" class="work-item" target="_blank">
           <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
+            <h5>GOT-JEPA: Generic Object Tracking with Model Adaptation and Occlusion Handling using Joint-Embedding Predictive Architecture</h5>
+            <p>Self-supervised prediction framework to improve tracker adaptation and generalization in the wild</p>
+            <span class="work-venue"> Under Revision @ IEEE TCSVT 2026</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
         </a>
@@ -310,12 +302,26 @@
       </video>
       <!-- TODO: Replace with your video description -->
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+    GOT-Edit facilitates the understanding of 3D geometry to
+    aid generic object tracking from 2D streaming inputs. It predicts semantic and geometric model
+    weights concurrently to incrementally adapt the tracking model. Through online model editing,
+    it ensures geometry-aware, semantic-preserving updates to the tracking model.
       </h2>
     </div>
   </div>
 </section>
 <!-- End teaser video -->
+
+
+<div class="item">
+  <embed src="static/images/FM_T-GOT-Edit_teaser.pdf" type="application/pdf" width="100%" height="500px" />
+  <h2 class="subtitle has-text-centered">
+    GOT-Edit facilitates the understanding of 3D geometry to
+    aid generic object tracking from 2D streaming inputs. It predicts semantic and geometric model
+    weights concurrently to incrementally adapt the tracking model. Through online model editing,
+    it ensures geometry-aware, semantic-preserving updates to the tracking model.
+  </h2>
+</div>
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -340,46 +346,6 @@ Extensive experiments on multiple GOT benchmarks demonstrate that GOT-Edit achie
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
 
 
 
@@ -447,7 +413,7 @@ Extensive experiments on multiple GOT benchmarks demonstrate that GOT-Edit achie
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title">Poster</h2>
+      <h2 class="title">Paper</h2>
 
       <!-- TODO: Replace with your poster PDF -->
       <iframe  src="static/pdfs/ICLR_2026_GOT_Edit.pdf" width="100%" height="550">
