@@ -6,13 +6,13 @@
   
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
+  <meta name="title" content="GOT-Edit_ICLR26">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta name="description" content="Cross-modality online model editing">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
+  <meta name="keywords" content="machine learning, computer vision, AI">
   <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="author" content="Shih-Fang Chen">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
   
@@ -291,53 +291,43 @@
 </section>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-<script>
-  const url = 'static/images/FM_T-GOT-Edit_teaser.pdf';
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        
+       <div class="item">
+        <img src="static/images/FM_T-GOT-Edit_teaser.svg" alt="GOT-Edit Teaser SVG visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          <strong>GOT-Edit</strong> facilitates the understanding of 3D geometry to aid generic object tracking from 2D streaming inputs. It predicts semantic and geometric model weights concurrently to incrementally adapt the tracking model. Through online model editing, it ensures geometry-aware, semantic-preserving updates to the tracking model.
+        </h2>
+      </div>
 
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+      <div class="item">
+        <img src="static/images/FM_T-GOT-Edit_teaser.png" alt="GOT-Edit Teaser PNG visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          <strong>GOT-Edit</strong> facilitates the understanding of 3D geometry to aid generic object tracking from 2D streaming inputs. It predicts semantic and geometric model weights concurrently to incrementally adapt the tracking model. Through online model editing, it ensures geometry-aware, semantic-preserving updates to the tracking model.
+        </h2>
+      </div>
 
-  pdfjsLib.getDocument(url).promise.then(function(pdf) {
-    pdf.getPage(1).then(function(page) {
-      
-      const scale = 2.0; // Base scale
-      const viewport = page.getViewport({scale: scale});
-      
-      // Fix for blurry images on high-res monitors (Retina/4K)
-      const outputScale = window.devicePixelRatio || 1;
+      <div class="item">
+        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+         Third image description.
+       </h2>
+     </div>
 
-      const canvas = document.getElementById('the-canvas');
-      const context = canvas.getContext('2d');
-      
-      canvas.width = Math.floor(viewport.width * outputScale);
-      canvas.height = Math.floor(viewport.height * outputScale);
-
-      const transform = outputScale !== 1 
-        ? [outputScale, 0, 0, outputScale, 0, 0] 
-        : null;
-
-      const renderContext = {
-        canvasContext: context,
-        transform: transform,
-        viewport: viewport
-      };
-      
-      page.render(renderContext);
-    });
-  });
-</script>
-
-<div class="item">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
-    
-    <canvas id="the-canvas" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.05);"></canvas>
-    
-    <p class="subtitle" style="margin-top: 15px; font-size: 1.05rem; text-align: justify; line-height: 1.5; color: #4a4a4a;">
-      <strong>GOT-Edit</strong> facilitates the understanding of 3D geometry to aid generic object tracking from 2D streaming inputs. It predicts semantic and geometric model weights concurrently to incrementally adapt the tracking model. Through online model editing, it ensures geometry-aware, semantic-preserving updates to the tracking model.
-    </p>
+     <div class="item">
+      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
+      <h2 class="subtitle has-text-centered">
+        Fourth image description.
+      </h2>
+    </div>
 
   </div>
 </div>
+</div>
+</section>
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
