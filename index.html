@@ -299,19 +299,29 @@
 
   pdfjsLib.getDocument(url).promise.then(function(pdf) {
     pdf.getPage(1).then(function(page) {
-      // Changed from 2.0 to 3.0 to keep the image perfectly sharp at the new, larger size
-      const scale = 3.0; 
+      
+      const scale = 2.0; // Base scale
       const viewport = page.getViewport({scale: scale});
+      
+      // Fix for blurry images on high-res monitors (Retina/4K)
+      const outputScale = window.devicePixelRatio || 1;
 
       const canvas = document.getElementById('the-canvas');
       const context = canvas.getContext('2d');
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
+      
+      canvas.width = Math.floor(viewport.width * outputScale);
+      canvas.height = Math.floor(viewport.height * outputScale);
+
+      const transform = outputScale !== 1 
+        ? [outputScale, 0, 0, outputScale, 0, 0] 
+        : null;
 
       const renderContext = {
         canvasContext: context,
+        transform: transform,
         viewport: viewport
       };
+      
       page.render(renderContext);
     });
   });
