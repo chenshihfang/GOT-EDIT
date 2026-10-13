@@ -56,6 +56,16 @@
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+  <style>
+    body > .more-works-container {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: max-content;
+      max-width: calc(100% - 2rem);
+      margin: 1rem 1rem 0 auto;
+    }
+  </style>
   
   <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
